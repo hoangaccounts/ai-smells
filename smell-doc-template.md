@@ -6,6 +6,12 @@ Each smell should be documented in its own file.
 Do not propose final implementations or enforcement here.
 This document captures **pressure**, not policy.
 
+## Navigation
+
+- [README](../README.md)
+- [Design Smells & Guardrail Ideas](design-smells-and-guardrail-ideas.md)
+- [Labs](labs/)
+
 ---
 
 ## Summary

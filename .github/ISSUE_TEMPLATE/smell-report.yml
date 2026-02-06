@@ -1,0 +1,60 @@
+name: Smell Report
+description: Report an observed AI collaboration smell (failure mode) with a concrete example.
+title: "Smell: <short name>"
+labels: ["smell"]
+body:
+  - type: input
+    id: smell_name
+    attributes:
+      label: Smell name
+      description: Short, memorable name (e.g., "Unscoped Regeneration").
+      placeholder: Unscoped Regeneration
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One paragraph describing what happened and why it matters.
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+      description: What did the AI do? What was the context? What was the undesired outcome?
+      placeholder: |
+        Context:
+        - ...
+
+        Observed:
+        - ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: Minimal example / repro
+      description: Paste the smallest transcript snippet, prompt, diff, or output that demonstrates the smell.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: What did this cost (time, correctness, trust, rework)? What failure did it cause?
+    validations:
+      required: true
+
+  - type: textarea
+    id: guardrail_ideas
+    attributes:
+      label: Guardrail ideas (optional)
+      description: Candidate guardrails to explore (not a final spec).
+    validations:
+      required: false
