@@ -1,29 +1,57 @@
-# Vocabulary Collisions
+# Smell: Vocabulary Collisions
 
 ## Summary
-Key terms are reused with different meanings across contexts, causing ambiguity.
+
+**Vocabulary Collisions** occur when the same term is reused with different meanings across contexts.
+
+---
 
 ## Observed Behavior
-Terms like “module”, “contract”, or “state” shift meaning depending on context.
 
-## Minimal Example
-“Module” refers alternately to a file, feature, or runtime unit.
+- The assistant introduces changes that were not explicitly requested.
+- Previously stable assumptions, structure, or wording shift without notice.
+- The change is framed as “reasonable” or “helpful,” masking the violation.
 
-## Why It Matters
-- Miscommunication
-- Broken tooling assumptions
-- Reader confusion
+---
 
-## Constraints & Boundary Conditions
-- Cross-domain discussions
-- Long-lived artifacts
+## Why This Is a Problem
 
-## Candidate Guardrails (Optional)
-- Canonical glossary
-- Term linking
+- Undermines user intent and trust.
+- Forces costly re-review of already accepted material.
+- Breaks attribution: users can no longer trace *why* something changed.
+- Makes iterative collaboration brittle and exhausting.
 
-## Related Smells (Optional)
-- Format Drift and Spec Leakage
+---
 
-## Notes (Optional)
-Often unnoticed until enforcement.
+## Root Cause
+
+The model reuses familiar terminology opportunistically rather than enforcing semantic stability.
+
+---
+
+## Invariant Violated
+
+> Each term must map to one stable meaning within an artifact.
+
+---
+
+## Candidate Guardrails (Ideas Only)
+
+- Explicit declaration of stable vs mutable elements.
+- Confirmation gates before assumption or boundary changes.
+- Diff-based execution with scope enforcement.
+- Rejection of implicit reinterpretation.
+
+---
+
+## Detection Signal
+
+- Output “feels off” despite appearing coherent.
+- User must restate constraints already agreed upon.
+- Changes appear outside the stated goal.
+
+---
+
+## Status
+
+Observed repeatedly in real-world AI-assisted work.

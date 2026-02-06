@@ -1,29 +1,57 @@
-# Partial Rewrites Breaking Consistency
+# Smell: Partial Rewrites Breaking Consistency
 
 ## Summary
-The AI updates one part of an artifact but leaves related parts inconsistent.
+
+**Partial Rewrites Breaking Consistency** occur when localized changes leave the rest of the artifact incoherent.
+
+---
 
 ## Observed Behavior
-Renaming a concept in one section while references elsewhere remain unchanged.
 
-## Minimal Example
-Term updated in intro but not in later sections.
+- The assistant introduces changes that were not explicitly requested.
+- Previously stable assumptions, structure, or wording shift without notice.
+- The change is framed as “reasonable” or “helpful,” masking the violation.
 
-## Why It Matters
-- Inconsistent artifacts
-- Reader distrust
-- Subtle bugs
+---
 
-## Constraints & Boundary Conditions
-- Large documents
-- Iterative edits
+## Why This Is a Problem
 
-## Candidate Guardrails (Optional)
-- Consistency sweeps
-- Cross-reference checks
+- Undermines user intent and trust.
+- Forces costly re-review of already accepted material.
+- Breaks attribution: users can no longer trace *why* something changed.
+- Makes iterative collaboration brittle and exhausting.
 
-## Related Smells (Optional)
-- Unscoped Regeneration
+---
 
-## Notes (Optional)
-Surface-level correctness hides deeper breaks.
+## Root Cause
+
+The model edits locally without enforcing global consistency checks.
+
+---
+
+## Invariant Violated
+
+> All dependent references must remain consistent.
+
+---
+
+## Candidate Guardrails (Ideas Only)
+
+- Explicit declaration of stable vs mutable elements.
+- Confirmation gates before assumption or boundary changes.
+- Diff-based execution with scope enforcement.
+- Rejection of implicit reinterpretation.
+
+---
+
+## Detection Signal
+
+- Output “feels off” despite appearing coherent.
+- User must restate constraints already agreed upon.
+- Changes appear outside the stated goal.
+
+---
+
+## Status
+
+Observed repeatedly in real-world AI-assisted work.

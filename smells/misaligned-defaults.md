@@ -1,29 +1,57 @@
-# Misaligned Defaults
+# Smell: Misaligned Defaults
 
 ## Summary
-The AI chooses defaults that conflict with the user’s real constraints.
+
+**Misaligned Defaults** occur when the AI applies reasonable-sounding defaults that conflict with the user’s actual constraints.
+
+---
 
 ## Observed Behavior
-Reasonable-sounding defaults are applied without checking environment or goals.
 
-## Minimal Example
-Assuming greenfield setup in a legacy system.
+- The assistant introduces changes that were not explicitly requested.
+- Previously stable assumptions, structure, or wording shift without notice.
+- The change is framed as “reasonable” or “helpful,” masking the violation.
 
-## Why It Matters
-- Rework
-- Hidden costs
-- Repeated correction cycles
+---
 
-## Constraints & Boundary Conditions
-- Implicit environments
-- Enterprise or constrained systems
+## Why This Is a Problem
 
-## Candidate Guardrails (Optional)
-- Explicit defaults declaration
-- Pre-flight checks
+- Undermines user intent and trust.
+- Forces costly re-review of already accepted material.
+- Breaks attribution: users can no longer trace *why* something changed.
+- Makes iterative collaboration brittle and exhausting.
 
-## Related Smells (Optional)
-- Invisible Assumption Drift
+---
 
-## Notes (Optional)
-Defaults hide assumptions.
+## Root Cause
+
+The model fills missing context with generalized assumptions.
+
+---
+
+## Invariant Violated
+
+> Defaults must be explicit and confirmed.
+
+---
+
+## Candidate Guardrails (Ideas Only)
+
+- Explicit declaration of stable vs mutable elements.
+- Confirmation gates before assumption or boundary changes.
+- Diff-based execution with scope enforcement.
+- Rejection of implicit reinterpretation.
+
+---
+
+## Detection Signal
+
+- Output “feels off” despite appearing coherent.
+- User must restate constraints already agreed upon.
+- Changes appear outside the stated goal.
+
+---
+
+## Status
+
+Observed repeatedly in real-world AI-assisted work.
