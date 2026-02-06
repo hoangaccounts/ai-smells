@@ -11,11 +11,11 @@ It exists to name recurring problems clearly *before* trying to fix them.
 
 - **Smell catalog**  
   Individual, focused documents describing real AI collaboration failure modes:  
-  👉 **[`ai-smells/smells/`](ai-smells/smells/)**
+  👉 **[`ai-smells/smells/`](smells/)**
 
 - **Smell documentation format**  
   The standard template used for every smell write-up:  
-  👉 **[`ai-smells/smell-doc-template.md`](ai-smells/smell-doc-template.md)**
+  👉 **[`ai-smells/smell-doc-template.md`](smell-doc-template.md)**
 
 ---
 
