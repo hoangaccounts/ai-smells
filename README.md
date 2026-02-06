@@ -1,34 +1,63 @@
 # AI Smells
 
-A small, practical catalog of **failure modes (“smells”)** that show up when collaborating with AI on design-, intent-, and change-sensitive work — plus **guardrail ideas** that may reduce drift.
+A small, practical catalog of **failure modes (“smells”)** that show up when collaborating with AI on design-, intent-, and change-sensitive work.
 
-This repo is intentionally lightweight: it’s a place to capture **real observed pressure** before turning anything into policy, tooling, or a spec.
+This repository focuses on **observed behavior** — not solutions, tooling, or enforcement.
+It exists to name recurring problems clearly *before* trying to fix them.
 
 ---
 
 ## What’s in here
 
-- **Standard smell write-up format:** see **[Smell Documentation Template](ai-smells/smell-doc-template.md)**
-- **Experiments / drafts:** see **[`ai-smells/labs/`](ai-smells/labs/)**
+- **Smell catalog**  
+  Individual, focused documents describing real AI collaboration failure modes:  
+  👉 **[`ai-smells/smells/`](ai-smells/smells/)**
+
+- **Smell documentation format**  
+  The standard template used for every smell write-up:  
+  👉 **[`ai-smells/smell-doc-template.md`](ai-smells/smell-doc-template.md)**
+
+---
+
+## What this repo is (and isn’t)
+
+**This repo is:**
+- A place to capture *repeatable problems* seen in real AI-assisted work
+- Pressure documentation: what breaks, how, and why it matters
+- Intentionally small, readable, and navigable
+
+**This repo is not:**
+- A guardrail specification
+- A product roadmap
+- An enforcement framework
+- A proposal for how AI *should* behave
+
+Those may come later — but only if the smells justify them.
 
 ---
 
 ## How to add a smell
 
-1. Copy the template:
-   - `ai-smells/smell-doc-template.md` → `ai-smells/smell-<short-name>.md`
-2. Fill it out with **one concrete example** (the smallest reproducible snippet you can).
+1. Copy the template:  
+   `ai-smells/smell-doc-template.md` → `ai-smells/smells/smell-<short-name>.md`
+
+2. Document **one smell only**, including:
+   - what was observed
+   - a minimal concrete example
+   - why it mattered
+
 3. Open a PR.
 
-If you’re unsure whether something is a “smell” or a “bug,” open an issue using the **Smell Report** template and we’ll sort it out.
+If you’re unsure whether something qualifies as a smell, open an issue and describe the behavior first.
 
 ---
 
 ## Principles
 
-- **Observed behavior first.** Capture what happened and why it mattered.
-- **Pressure, not policy.** Avoid prescribing final enforcement or product features in smell docs.
-- **Small and navigable.** Prefer many small docs over one giant write-up.
+- **Observed behavior first** — no hypotheticals
+- **One smell per file**
+- **Concrete examples over theory**
+- **Pressure, not prescriptions**
 
 ---
 
