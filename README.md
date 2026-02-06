@@ -8,7 +8,6 @@ This repo is intentionally lightweight: it’s a place to capture **real observe
 
 ## What’s in here
 
-- **Smell catalog + guardrail notes:** see **[Design Smells & Guardrail Ideas](ai-smells/design-smells-and-guardrail-ideas.md)**
 - **Standard smell write-up format:** see **[Smell Documentation Template](ai-smells/smell-doc-template.md)**
 - **Experiments / drafts:** see **[`ai-smells/labs/`](ai-smells/labs/)**
 
