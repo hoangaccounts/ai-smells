@@ -1,23 +1,30 @@
 # Boundary Violations Across Layers
 
 ## Summary
-The AI fixes an issue in one layer by changing another.
+The AI fixes an issue in one layer by changing another, violating architectural boundaries.
 
 ## Observed Behavior
-Describe what the AI did in practice and how it differed from the user’s intent.
+UI problems lead to domain changes.
+Data issues trigger app-level rewrites.
 
 ## Minimal Example
-Provide the smallest transcript, prompt, diff, or snippet that demonstrates this smell.
+Fixing a UI bug by altering domain logic.
 
 ## Why It Matters
-Explain the impact on correctness, trust, time, or maintainability.
+- Architecture erosion
+- Tight coupling
+- Long-term cost
 
 ## Constraints & Boundary Conditions
-Where does this smell typically appear? Under what conditions?
+- Layered architectures
+- Systems with explicit boundaries
 
 ## Candidate Guardrails (Optional)
-List possible guardrails, not final implementations.
+- Frozen layers
+- Explicit boundary permissions
 
 ## Related Smells (Optional)
+- Misaligned Defaults
 
 ## Notes (Optional)
+Short-term fixes, long-term damage.

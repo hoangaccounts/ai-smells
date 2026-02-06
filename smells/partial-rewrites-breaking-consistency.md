@@ -1,23 +1,29 @@
 # Partial Rewrites Breaking Consistency
 
 ## Summary
-The AI changes one part of an artifact but leaves related parts inconsistent.
+The AI updates one part of an artifact but leaves related parts inconsistent.
 
 ## Observed Behavior
-Describe what the AI did in practice and how it differed from the user’s intent.
+Renaming a concept in one section while references elsewhere remain unchanged.
 
 ## Minimal Example
-Provide the smallest transcript, prompt, diff, or snippet that demonstrates this smell.
+Term updated in intro but not in later sections.
 
 ## Why It Matters
-Explain the impact on correctness, trust, time, or maintainability.
+- Inconsistent artifacts
+- Reader distrust
+- Subtle bugs
 
 ## Constraints & Boundary Conditions
-Where does this smell typically appear? Under what conditions?
+- Large documents
+- Iterative edits
 
 ## Candidate Guardrails (Optional)
-List possible guardrails, not final implementations.
+- Consistency sweeps
+- Cross-reference checks
 
 ## Related Smells (Optional)
+- Unscoped Regeneration
 
 ## Notes (Optional)
+Surface-level correctness hides deeper breaks.

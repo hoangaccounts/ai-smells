@@ -1,23 +1,29 @@
 # Vocabulary Collisions
 
 ## Summary
-Terms are reused with different meanings across contexts.
+Key terms are reused with different meanings across contexts, causing ambiguity.
 
 ## Observed Behavior
-Describe what the AI did in practice and how it differed from the user’s intent.
+Terms like “module”, “contract”, or “state” shift meaning depending on context.
 
 ## Minimal Example
-Provide the smallest transcript, prompt, diff, or snippet that demonstrates this smell.
+“Module” refers alternately to a file, feature, or runtime unit.
 
 ## Why It Matters
-Explain the impact on correctness, trust, time, or maintainability.
+- Miscommunication
+- Broken tooling assumptions
+- Reader confusion
 
 ## Constraints & Boundary Conditions
-Where does this smell typically appear? Under what conditions?
+- Cross-domain discussions
+- Long-lived artifacts
 
 ## Candidate Guardrails (Optional)
-List possible guardrails, not final implementations.
+- Canonical glossary
+- Term linking
 
 ## Related Smells (Optional)
+- Format Drift and Spec Leakage
 
 ## Notes (Optional)
+Often unnoticed until enforcement.

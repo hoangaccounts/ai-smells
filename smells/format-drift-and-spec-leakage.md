@@ -1,23 +1,31 @@
 # Format Drift and Spec Leakage
 
 ## Summary
-The AI mixes narrative, spec, and implementation details without clear boundaries.
+The AI blends explanation, specification, and implementation details into a single output, eroding boundaries between descriptive and normative content.
 
 ## Observed Behavior
-Describe what the AI did in practice and how it differed from the user’s intent.
+A user asks for a spec-like artifact.
+The assistant alternates between prose explanation, pseudo-code, and implementation suggestions without signaling which parts are authoritative.
 
 ## Minimal Example
-Provide the smallest transcript, prompt, diff, or snippet that demonstrates this smell.
+A section labeled “Specification” includes narrative advice and example code mixed with MUST/SHALL language.
 
 ## Why It Matters
-Explain the impact on correctness, trust, time, or maintainability.
+- Readers cannot tell what is binding vs illustrative
+- Artifacts become unusable for enforcement or tooling
+- Specs slowly degrade into tutorials
 
 ## Constraints & Boundary Conditions
-Where does this smell typically appear? Under what conditions?
+- Common in early-stage designs
+- Triggered by “explain and define” prompts
+- Worse when iterating on partial specs
 
 ## Candidate Guardrails (Optional)
-List possible guardrails, not final implementations.
+- Explicit section typing (normative vs non-normative)
+- Validation of normative language usage
 
 ## Related Smells (Optional)
+- Vocabulary Collisions
 
 ## Notes (Optional)
+Often introduced gradually across revisions.

@@ -1,23 +1,29 @@
 # Misaligned Defaults
 
 ## Summary
-The AI selects defaults that conflict with the user's actual constraints.
+The AI chooses defaults that conflict with the user’s real constraints.
 
 ## Observed Behavior
-Describe what the AI did in practice and how it differed from the user’s intent.
+Reasonable-sounding defaults are applied without checking environment or goals.
 
 ## Minimal Example
-Provide the smallest transcript, prompt, diff, or snippet that demonstrates this smell.
+Assuming greenfield setup in a legacy system.
 
 ## Why It Matters
-Explain the impact on correctness, trust, time, or maintainability.
+- Rework
+- Hidden costs
+- Repeated correction cycles
 
 ## Constraints & Boundary Conditions
-Where does this smell typically appear? Under what conditions?
+- Implicit environments
+- Enterprise or constrained systems
 
 ## Candidate Guardrails (Optional)
-List possible guardrails, not final implementations.
+- Explicit defaults declaration
+- Pre-flight checks
 
 ## Related Smells (Optional)
+- Invisible Assumption Drift
 
 ## Notes (Optional)
+Defaults hide assumptions.

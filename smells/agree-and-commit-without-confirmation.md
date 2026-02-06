@@ -1,23 +1,31 @@
 # Agree-and-Commit Without Confirmation
 
 ## Summary
-The AI proceeds as if approval was given for exploratory ideas.
+The AI proceeds as if approval was granted when the user was still exploring or thinking aloud.
 
 ## Observed Behavior
-Describe what the AI did in practice and how it differed from the user’s intent.
+Exploratory phrases (“maybe”, “what if”) are treated as decisions.
+The assistant implements changes immediately instead of pausing.
 
 ## Minimal Example
-Provide the smallest transcript, prompt, diff, or snippet that demonstrates this smell.
+User: “Maybe we could rename this?”
+Assistant: Outputs a full rename diff.
 
 ## Why It Matters
-Explain the impact on correctness, trust, time, or maintainability.
+- Removes user agency
+- Forces rollback
+- Creates frustration and churn
 
 ## Constraints & Boundary Conditions
-Where does this smell typically appear? Under what conditions?
+- Fast-paced back-and-forth
+- Long sessions with implicit momentum
 
 ## Candidate Guardrails (Optional)
-List possible guardrails, not final implementations.
+- Explicit approval tokens
+- Mandatory plan/preview step
 
 ## Related Smells (Optional)
+- Unscoped Regeneration
 
 ## Notes (Optional)
+Feels like helpfulness, but acts like force.
